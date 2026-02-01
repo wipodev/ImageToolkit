@@ -2,7 +2,7 @@
 
 
 a = Analysis(
-    ['ConvertImage.py'],
+    ['src/ConvertImage.py'],
     pathex=[],
     binaries=[],
     datas=[],
@@ -35,5 +35,12 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon=['icon.ico'],
+    icon=[
+        'assets/icon.ico',
+        'assets/ico.ico',
+        'assets/jpg.ico',
+        'assets/png.ico',
+        'assets/webp.ico'
+    ],
+    version='version_info.txt',
 )
