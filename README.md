@@ -1,69 +1,76 @@
 # 📸 Image Toolkit (Context Menu)
 
-**Image Toolkit** es una herramienta profesional de procesamiento de imágenes para Windows. Se integra directamente en el **menú contextual del Explorador de Archivos**, permitiendo realizar operaciones complejas como conversión, redimensionado, recorte y optimización sin necesidad de abrir editores pesados.
+[**Leer en Español 🇪🇸**](README.es.md)
+
+**Image Toolkit** is a professional image processing tool for Windows. It integrates directly into the **File Explorer context menu**, allowing you to perform complex operations such as conversion, resizing, cropping, and optimization without the need to open heavy editors.
 
 ---
 
-## ✨ Características Principales
+## ✨ Main Features
 
-- **Integración Nativa**: Menú en cascada organizado que aparece al hacer clic derecho sobre imágenes o carpetas.
+- **Native Integration**: Organized cascading menu that appears when right-clicking images or folders.
 
-- **Conversión Multiformato**: Soporte inteligente para `.png`, `.jpg`, `.webp`, `.ico`, `.bmp` y `.tiff` .
+- **Multi-Format Conversion**: Smart support for `.png`, `.jpg`, `.webp`, `.ico`, `.bmp`, and `.tiff`.
 
-- **Optimización Avanzada**:
-- **Modo UI**: Previsualiza el ahorro de espacio y ajusta la calidad en tiempo real.
+- **Advanced Optimization**:
 
-- **Modo Flash**: Optimización rápida con valores predeterminados.
+- **UI Mode**: Preview space savings and adjust quality in real time.
 
-- **Edición Visual**:
-- **Recorte Profesional**: Interfaz interactiva para seleccionar el área exacta.
+- **Flash Mode**: Fast optimization using preset values.
 
-- **Redimensionado**: Escala imágenes manteniendo o modificando la relación de aspecto.
+- **Visual Editing**:
 
-- **Herramientas para Desarrolladores**:
-- **Generador de Iconos**: Crea archivos `.ico` con capas de resolución automáticas (16px a 256px).
-- **Icon Packager (DLL)**: Empaqueta carpetas enteras de iconos en una librería `.dll` de recursos de Windows.
+- **Professional Cropping**: Interactive interface to select the exact area.
 
----
+- **Resizing**: Scale images while maintaining or modifying the aspect ratio.
 
-## 🛠️ Funcionalidades Detalladas
+- **Developer Tools**:
 
-### 🔄 Conversión
+- **Icon Generator**: Create `.ico` files with automatic resolution layers (16px to 256px).
 
-Gestión automática de transparencia (Canal Alpha) al convertir formatos con transparencia (PNG/WEBP) a formatos que no la soportan (JPG).
-
-### 📉 Optimización (Engine & UI)
-
-Motor de compresión que permite calcular el porcentaje de ahorro antes de guardar el archivo.
-
-### ✂️ Recorte y Escala
-
-Interfaz moderna construida en PySide6 que permite ajustes manuales por píxeles o manipulación visual directa sobre la imagen.
+- **Icon Packager (DLL)**: Package entire icon folders into a Windows resource `.dll` library.
 
 ---
 
-## 🚀 Instalación y Uso
+## 🛠️ Detailed Features
 
-1. **Descarga**: Ve a la sección de [Releases](https://github.com/wipodev/ImageToolkit/releases) y descarga `ImageToolkit_Installer.exe`.
-2. **Instalación**: Ejecuta el instalador. Este registrará automáticamente las claves en el `CommandStore` de Windows.
+### 🔄 Conversion
 
-3. **Uso**:
+Automatic transparency handling (Alpha Channel) when converting formats with transparency (PNG/WEBP) to formats that do not support it (JPG).
 
-- Haz clic derecho sobre cualquier imagen admitida para ver el menú **Image Toolkit**.
-- Haz clic derecho sobre una carpeta para usar la función **Empaquetar imágenes (DLL)**.
+### 📉 Optimization (Engine & UI)
+
+Compression engine that allows calculating the percentage of space savings before saving the file.
+
+### ✂️ Cropping and Scaling
+
+Modern interface built with PySide6 that allows manual pixel-level adjustments or direct visual manipulation of the image.
 
 ---
 
-## 💻 Desarrollo y Compilación
+## 🚀 Installation and Usage
 
-Si deseas modificar el proyecto, sigue estos pasos:
+1. **Download**: Go to the [Releases](https://github.com/wipodev/ImageToolkit/releases) section and download `ImageToolkit_Installer.exe`.
 
-### 1. Requisitos previos
+2. **Installation**: Run the installer. It will automatically register the keys in the Windows `CommandStore`.
+
+3. **Usage**:
+
+- Right-click any supported image to see the **Image Toolkit** menu.
+- Right-click a folder to use the **Package images (DLL)** function.
+
+---
+
+## 💻 Development and Build
+
+If you want to modify the project, follow these steps:
+
+### 1. Prerequisites
 
 - Python 3.10+
-- Inno Setup 6 (para generar el instalador)
+- Inno Setup 6 (to generate the installer)
 
-### 2. Configuración del entorno
+### 2. Environment setup
 
 ```bash
 git clone https://github.com/wipodev/ImageToolkit.git
@@ -71,28 +78,28 @@ cd ImageToolkit
 python -m venv venv
 .\venv\Scripts\activate
 pip install -r requirements.txt
-
 ```
 
-### 3. Estructura del Proyecto
+### 3. Project Structure
 
-- **`src/`**: Código fuente de la lógica y UI (PySide6/Pillow).
-- **`setup.iss`**: Script de Inno Setup para la integración con el registro.
-- **`build.py`**: Script de automatización para generar el ejecutable (`.exe`) y el instalador final.
+- **`src/`**: Source code for logic and UI (PySide6/Pillow).
+- **`setup.iss`**: Inno Setup script for registry integration.
+- **`build.py`**: Automation script to generate the executable (`.exe`) and the final installer.
 
-### 4. Compilación manual
+### 4. Manual build
 
-Para generar el instalador final:
+To generate the final installer:
 
 ```bash
 python build.py
-
 ```
 
-El instalador resultante se ubicará en la carpeta `dist/`.
+The resulting installer will be located in the `dist/` folder.
 
 ---
 
-## 📄 Licencia
+## 📄 License
 
-Este proyecto está bajo la **Licencia Apache 2.0**. Consulta el archivo `LICENSE` para más detalles.
+This project is licensed under the **Apache License 2.0**. See the `LICENSE` file for more details.
+
+---
