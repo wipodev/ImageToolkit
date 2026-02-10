@@ -1,66 +1,95 @@
 # 📸 Image Toolkit (Context Menu)
 
-**Image Toolkit** es una herramienta profesional para Windows que permite convertir imágenes entre múltiples formatos (**PNG, JPG, WEBP e ICO**) directamente desde el menú contextual del explorador de archivos.
+**Image Toolkit** es una herramienta profesional de procesamiento de imágenes para Windows. Se integra directamente en el **menú contextual del Explorador de Archivos**, permitiendo realizar operaciones complejas como conversión, redimensionado, recorte y optimización sin necesidad de abrir editores pesados.
 
 ---
 
-## ✨ Características
+## ✨ Características Principales
 
-- **Integración Nativa**: Accede a las funciones con clic derecho.
-- **Menú en Cascada**: Interfaz organizada y limpia en Windows.
-- **Soporte Multiformato**: Conversión cruzada inteligente entre `.png`, `.jpg`, `.webp` y `.ico`.
-- **Manejo de Transparencia**: Gestión automática de canales Alpha al convertir a formatos sin transparencia.
-- **Generador de Iconos**: Crea archivos `.ico` optimizados con múltiples capas de resolución.
+- **Integración Nativa**: Menú en cascada organizado que aparece al hacer clic derecho sobre imágenes o carpetas.
+
+- **Conversión Multiformato**: Soporte inteligente para `.png`, `.jpg`, `.webp`, `.ico`, `.bmp` y `.tiff` .
+
+- **Optimización Avanzada**:
+- **Modo UI**: Previsualiza el ahorro de espacio y ajusta la calidad en tiempo real.
+
+- **Modo Flash**: Optimización rápida con valores predeterminados.
+
+- **Edición Visual**:
+- **Recorte Profesional**: Interfaz interactiva para seleccionar el área exacta.
+
+- **Redimensionado**: Escala imágenes manteniendo o modificando la relación de aspecto.
+
+- **Herramientas para Desarrolladores**:
+- **Generador de Iconos**: Crea archivos `.ico` con capas de resolución automáticas (16px a 256px).
+- **Icon Packager (DLL)**: Empaqueta carpetas enteras de iconos en una librería `.dll` de recursos de Windows.
 
 ---
 
-## 🚀 Instalación
+## 🛠️ Funcionalidades Detalladas
 
-1. Ve a la sección de **Releases** de este repositorio.
-2. Descarga la última versión de **ImageToolkit_Installer.exe**.
-3. Ejecuta el instalador. ¡Listo! Ya puedes hacer clic derecho sobre tus imágenes.
+### 🔄 Conversión
+
+Gestión automática de transparencia (Canal Alpha) al convertir formatos con transparencia (PNG/WEBP) a formatos que no la soportan (JPG).
+
+### 📉 Optimización (Engine & UI)
+
+Motor de compresión que permite calcular el porcentaje de ahorro antes de guardar el archivo.
+
+### ✂️ Recorte y Escala
+
+Interfaz moderna construida en PySide6 que permite ajustes manuales por píxeles o manipulación visual directa sobre la imagen.
 
 ---
 
-## 🛠️ Desarrollo y Compilación
+## 🚀 Instalación y Uso
 
-Si deseas contribuir o modificar el comportamiento del script, sigue estos pasos:
+1. **Descarga**: Ve a la sección de [Releases](https://github.com/wipodev/ImageToolkit/releases) y descarga `ImageToolkit_Installer.exe`.
+2. **Instalación**: Ejecuta el instalador. Este registrará automáticamente las claves en el `CommandStore` de Windows.
 
-### 1. Clonar y configurar el entorno
+3. **Uso**:
 
-Se recomienda encarecidamente el uso de un entorno virtual para mantener limpias las dependencias de tu sistema.
+- Haz clic derecho sobre cualquier imagen admitida para ver el menú **Image Toolkit**.
+- Haz clic derecho sobre una carpeta para usar la función **Empaquetar imágenes (DLL)**.
+
+---
+
+## 💻 Desarrollo y Compilación
+
+Si deseas modificar el proyecto, sigue estos pasos:
+
+### 1. Requisitos previos
+
+- Python 3.10+
+- Inno Setup 6 (para generar el instalador)
+
+### 2. Configuración del entorno
 
 ```bash
-# Clonar el repositorio
 git clone https://github.com/wipodev/ImageToolkit.git
 cd ImageToolkit
-
-# Crear entorno virtual
 python -m venv venv
-
-# Activar el entorno (Windows)
 .\venv\Scripts\activate
-
-# Instalar dependencias
 pip install -r requirements.txt
+
 ```
 
-### 2. Estructura del Proyecto
+### 3. Estructura del Proyecto
 
-- **ImageToolkit.py**: Lógica principal de procesamiento (Pillow).
-- **app.spec**: Configuración de empaquetado para PyInstaller.
-- **setup.iss**: Script de Inno Setup para el instalador y registro de Windows.
-- **build.py**: Script de automatización total del proceso de construcción.
+- **`src/`**: Código fuente de la lógica y UI (PySide6/Pillow).
+- **`setup.iss`**: Script de Inno Setup para la integración con el registro.
+- **`build.py`**: Script de automatización para generar el ejecutable (`.exe`) y el instalador final.
 
-### 3. Compilación del Instalador
+### 4. Compilación manual
 
-Para generar el ejecutable y el instalador final en un solo paso:
+Para generar el instalador final:
 
 ```bash
 python build.py
+
 ```
 
-> **Nota**: El instalador generado se guardará localmente en la carpeta `dist/`, la cual está excluida del control de versiones.
+El instalador resultante se ubicará en la carpeta `dist/`.
 
 ---
 
