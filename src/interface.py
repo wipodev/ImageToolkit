@@ -55,6 +55,7 @@ class BaseWindow(QMainWindow):
 
         # 3. Visor Izquierda
         self.view = QGraphicsView(self.scene)
+        self.view.setViewportUpdateMode(QGraphicsView.ViewportUpdateMode.FullViewportUpdate)
         self.view.setStyleSheet("background-color: #121212; border: none;")
         self.view.setRenderHint(QPainter.SmoothPixmapTransform)
         

@@ -163,7 +163,7 @@ class MainWindow(BaseWindow):
             with Image.open(self.image_path) as img:
                 img.resize((tw, th), Image.Resampling.LANCZOS).save(output_path, quality=95)
             
-            QMessageBox.information(self, "Éxito", f"Guardada en:\n{output_path}")
+            print(f"Guardada en:\n{output_path}")
         except Exception as e:
             QMessageBox.critical(self, "Error", str(e))
 
