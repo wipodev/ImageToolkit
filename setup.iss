@@ -88,7 +88,7 @@ Root: HKLM; Subkey: "{#CMD_STORE}opt_def\command"; ValueType: string; ValueData:
 
 Root: HKLM; Subkey: "{#CMD_STORE}pack"; ValueType: string; ValueData: "Empaquetar imágenes (DLL Resource)"; Flags: uninsdeletekey
 Root: HKLM; Subkey: "{#CMD_STORE}pack"; ValueType: string; ValueName: "Icon"; ValueData: "{#ICON_DLL},12"; Flags: uninsdeletekey
-Root: HKLM; Subkey: "{#CMD_STORE}pack\command"; ValueType: string; ValueData: """{#APP_EXE}"" -p ""%1"""; Flags: uninsdeletekey
+Root: HKLM; Subkey: "{#CMD_STORE}pack\command"; ValueType: string; ValueData: """{#APP_EXE}"" -p ""%V"""; Flags: uninsdeletekey
 
 ; ===========================================================================
 ; 2. ASOCIACIONES POR EXTENSIÓN (IMÁGENES)
